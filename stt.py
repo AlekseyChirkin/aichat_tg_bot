@@ -1,46 +1,80 @@
-from pydub import AudioSegment
-from vosk import Model, KaldiRecognizer
+# -*- coding: utf8 -*-
+"""
+Конвертация wav -> текст
+"""
 import json
-import wave
 import os
+import subprocess
+from datetime import datetime
+import wave
+
+from vosk import KaldiRecognizer, Model  # оффлайн-распознавание от Vosk
 
 
-def audio_to_text(path_to_file: str) -> str:
-    # Convert .ogg to .wav
-    path_to_wav_file = path_to_file[-3] + 'wav'
-    audio = AudioSegment.from_ogg(path_to_file)
-    audio.export(path_to_wav_file, format="wav", bitrate=16000)
+class STT:
+    """
+    Класс для распознования аудио через Vosk и преобразования его в текст.
+    Поддерживаются форматы аудио: wav, ogg
+    """
+    default_init = {
+        "model_path": "model",  # путь к папке с файлами STT модели Vosk
+        "sample_rate": 16000
+    }
 
-    # check vosk model exists
-    if not os.path.exists("model"):
-        print("Please download the model from https://alphacephei.com/vosk/models and unpack as 'model' in the "
-              "current folder.")
-        exit(1)
+    """
+        Настройка модели Vosk для распознования аудио и
+        преобразования его в текст.
 
-    # Use Test file
-    # path_to_wav_file = 'C:\\temp\\aichat_tg_bot\\files\\voices\\decoder-test.wav'
+        :arg model_path:  str  путь до модели Vosk
+        :arg sample_rate: int  частота выборки, обычно 16000
+        :arg ffmpeg_path: str  путь к ffmpeg
+        """
 
-    recognized_data = ""
-    try:
-        wave_audio_file = wave.open(path_to_wav_file, "rb")
-        model = Model(r"model")
-        offline_recognizer = KaldiRecognizer(model, wave_audio_file.getframerate())
+        model = Model(self.model_path)
+        self.recognizer = KaldiRecognizer(model, 16000)
+        self.recognizer.SetWords(True)
 
-        print('reading frames')
-        data = wave_audio_file.readframes(wave_audio_file.getnframes())
+    def _check_model(self):
+        """
+        Проверка наличия модели Vosk на нужном языке в каталоге приложения
+        """
+        if not os.path.exists(self.model_path):
+            raise Exception(
+                "Vosk: сохраните папку model в папку vosk\n"
+                "Скачайте модель по ссылке https://alphacephei.com/vosk/models"
+                            )
 
-        print('frames read')
-        if len(data) > 0:
-            if offline_recognizer.AcceptWaveform(data):
-                recognized_data = offline_recognizer.Result()
+    def audio_to_text(self, audio_file_name=None) -> str:
+        """
+        Offline-распознавание аудио в текст через Vosk
+        :param audio_file_name: str путь и имя аудио файла
+        :return: str распознанный текст
+        """
+        if audio_file_name is None:
+            raise Exception("Укажите путь и имя файла")
+        if not os.path.exists(audio_file_name):
+            raise Exception("Укажите правильный путь и имя файла")
 
-                # получение данных распознанного текста из JSON-строки
-                # (чтобы можно было выдать по ней ответ)
-                print('получение данных распознанного текста из JSON-строки')
-                recognized_data = json.loads(recognized_data)
-                recognized_data = recognized_data["text"]
-    except:
-        print("Sorry, speech service is unavailable. Try again later")
+        # Открываем файл для чтения
+        wf = wave.open(audio_file_name, "rb")
 
-    print(recognized_data)
-    return recognized_data
+        # Чтение данных кусками и распознование через модель
+        while True:
+            data = wf.readframes(4000)
+            if len(data) == 0:
+                break
+            if self.recognizer.AcceptWaveform(data):
+                pass
+
+        # Возвращаем распознанный текст в виде str
+        result_json = self.recognizer.FinalResult()  # это json в виде str
+        result_dict = json.loads(result_json)    # это dict
+        return result_dict["text"]               # текст в виде str
+
+
+if __name__ == "__main__":
+    # Распознование аудио
+    start_time = datetime.now()
+    stt = STT()
+    print(stt.audio_to_text('/files/voices/decoder-test.wav'))
+    print("Время выполнения:", datetime.now() - start_time)
