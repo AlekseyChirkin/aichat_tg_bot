@@ -34,15 +34,18 @@ async def handle_file(file: File, file_name: str, path: str):
 async def voice_message_handler(message: Message):
     print('Recieved audio message!')
     voice = await message.voice.get_file()
-    path = "files/voices"
 
-    await handle_file(file=voice, file_name=f"{voice.file_id}.ogg", path=path)
+    path_to_save_voices = "files/voices"
+    voice_file_name = voice.file_id + '.ogg'
+    path_to_saved_voice_file = str(path_to_save_voices) + '/' + voice_file_name
+
+    await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
+
     print('File successfully downloaded!')
-    file_path = str(path) + '/' + str(voice.file_id) + '.ogg'
-    logging.info(f'File {voice.file_id}.ogg saved to {file_path} at {time.asctime()}')
+    logging.info(f'File {voice_file_name} saved to {path_to_saved_voice_file} at {time.asctime()}')
 
-    await message.reply(stt.audio_to_text(file_path))
-    print('Text sended to user!')
+    await message.reply(stt.audio_to_text(path_to_saved_voice_file))
+    print('Text sent to user!')
 
 if __name__ == "__main__":
     try:

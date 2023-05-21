@@ -1,6 +1,5 @@
-# -*- coding: utf8 -*-
 """
-Конвертация wav -> текст
+Конвертация ogg -> wav -> текст
 """
 import json
 import os
