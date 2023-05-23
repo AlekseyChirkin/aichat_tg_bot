@@ -1,186 +1,9 @@
-INFO:root:File AwACAgIAAxkBAAOyZGX1dND5Y9a5LhBSJNEUdbzw-goAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAOyZGX1dND5Y9a5LhBSJNEUdbzw-goAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Thu May 18 12:52:54 2023
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
 INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAO0ZGduWRF3o6UDFUGb-7Tx_q1Ar20AAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAO0ZGduWRF3o6UDFUGb-7Tx_q1Ar20AAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 15:41:01 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=Exception('Failed to process waveform')>
-Traceback (most recent call last):
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\stt.py", line 26, in audio_to_text
-    if rec.AcceptWaveform(data):
-       ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\vosk\__init__.py", line 184, in AcceptWaveform
-    raise Exception("Failed to process waveform")
-Exception: Failed to process waveform
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAO1ZGdulBPOAAFEaWz_vLfUpvHuhjyLAAJDMAACOyoAAUsM4FgZvxe6hC8E.ogg saved to files/voices/AwACAgIAAxkBAAO1ZGdulBPOAAFEaWz_vLfUpvHuhjyLAAJDMAACOyoAAUsM4FgZvxe6hC8E.ogg at Fri May 19 15:41:59 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=BadRequest('Message must be non-empty')>
-Traceback (most recent call last):
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 141, in detect
-    raise cls(description)
-aiogram.utils.exceptions.BadRequest: Message must be non-empty
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAO2ZGdvWH8Du46iLWko-2NekLeNV9UAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAO2ZGdvWH8Du46iLWko-2NekLeNV9UAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 15:45:15 2023
-INFO:root:File AwACAgIAAxkBAAO4ZGd3DE9YGZj1k1VaEKO_XGn8L0AAApguAAI1BeFKGKQzCjfRkcgvBA.ogg saved to files/voices/AwACAgIAAxkBAAO4ZGd3DE9YGZj1k1VaEKO_XGn8L0AAApguAAI1BeFKGKQzCjfRkcgvBA.ogg at Fri May 19 16:18:15 2023
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAO6ZGd5qTkNxog2KuzSt2zEbnNyUJYAApguAAI1BeFKGKQzCjfRkcgvBA.ogg saved to files/voices/AwACAgIAAxkBAAO6ZGd5qTkNxog2KuzSt2zEbnNyUJYAApguAAI1BeFKGKQzCjfRkcgvBA.ogg at Fri May 19 16:29:18 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'Wave_read' object has no attribute 'raw_data'")>
-Traceback (most recent call last):
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\stt.py", line 27, in audio_to_text
-    rec.AcceptWaveform(wf.raw_data)
-                       ^^^^^^^^^^^
-AttributeError: 'Wave_read' object has no attribute 'raw_data'
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAO8ZGd50ShcEOyhqou6IVRBzy89MjQAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAO8ZGd50ShcEOyhqou6IVRBzy89MjQAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 16:29:56 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'Wave_read' object has no attribute 'raw_data'")>
-Traceback (most recent call last):
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\stt.py", line 27, in audio_to_text
-    rec.AcceptWaveform(wf.raw_data)
-                       ^^^^^^^^^^^
-AttributeError: 'Wave_read' object has no attribute 'raw_data'
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAO9ZGd57L4jCUWu22SBqfZ4QORx1FcAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAO9ZGd57L4jCUWu22SBqfZ4QORx1FcAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 16:30:24 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'Wave_read' object has no attribute 'raw_data'")>
-Traceback (most recent call last):
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\stt.py", line 27, in audio_to_text
-    rec.AcceptWaveform(wf.raw_data)
-                       ^^^^^^^^^^^
-AttributeError: 'Wave_read' object has no attribute 'raw_data'
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAO_ZGd7iampxIcbWE8x_OftKcoOFSsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAO_ZGd7iampxIcbWE8x_OftKcoOFSsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 16:37:16 2023
+INFO:root:File AwACAgIAAxkBAAPGZGx4gqAEwuYouyJd2EGYVCkRoiIAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPGZGx4gqAEwuYouyJd2EGYVCkRoiIAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Tue May 23 11:25:41 2023
 ERROR:asyncio:Task exception was never retrieved
 future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
 Traceback (most recent call last):
@@ -199,8 +22,8 @@ Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
+  File "C:\temp\aichat_tg_bot\bot.py", line 47, in voice_message_handler
+    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
     return await self.bot.send_message(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -223,9 +46,9 @@ WARNING:aiogram:Goodbye!
 INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPAZGd704IoK6Ntc0d6Gk-BnUZk8UkAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPAZGd704IoK6Ntc0d6Gk-BnUZk8UkAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 16:38:30 2023
+INFO:root:File AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Tue May 23 11:49:14 2023
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
+future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=CouldntDecodeError('Decoding failed. ffmpeg returned error code: 1\n\nOutput from ffmpeg/avlib:\n\nffmpeg version 2023-05-15-git-2953ebe7b6-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers\r\n  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)\r\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint\r\n  libavutil      58.  7.100 / 58.  7.100\r\n  libavcodec     60. 12.100 / 60. 12.100\r\n  libavformat    60.  5.100 / 60.  5.100\r\n  libavdevice    60.  2.100 / 60.  2.100\r\n  libavfilter     9.  8.100 /  9.  8.100\r\n  libswscale      7.  2.100 /  7.  2.100\r\n  libswresample   4. 11.100 /  4. 11.100\r\n  libpostproc    57.  2.100 / 57.  2.100\r\n[wav @ 0000027546f1db40] invalid start code OggS in RIFF header\r\nfiles/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg: Invalid data found when processing input\r\n')>
 Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -242,197 +65,34 @@ Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.MessageTextIsEmpty: Message text is empty
+  File "C:\temp\aichat_tg_bot\bot.py", line 47, in voice_message_handler
+    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\stt.py", line 23, in recognize_speech
+    wav = AudioSegment.from_wav(path_to_file)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\pydub\audio_segment.py", line 808, in from_wav
+    return cls.from_file(file, 'wav', parameters=parameters)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\pydub\audio_segment.py", line 773, in from_file
+    raise CouldntDecodeError(
+pydub.exceptions.CouldntDecodeError: Decoding failed. ffmpeg returned error code: 1
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 2023-05-15-git-2953ebe7b6-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+  libavutil      58.  7.100 / 58.  7.100
+  libavcodec     60. 12.100 / 60. 12.100
+  libavformat    60.  5.100 / 60.  5.100
+  libavdevice    60.  2.100 / 60.  2.100
+  libavfilter     9.  8.100 /  9.  8.100
+  libswscale      7.  2.100 /  7.  2.100
+  libswresample   4. 11.100 /  4. 11.100
+  libpostproc    57.  2.100 / 57.  2.100
+[wav @ 0000027546f1db40] invalid start code OggS in RIFF header
+files/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg: Invalid data found when processing input
+
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPBZGd8KW2nYGVRxSJmeLpQYcg6mHMAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPBZGd8KW2nYGVRxSJmeLpQYcg6mHMAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 16:39:57 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
-Traceback (most recent call last):
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.MessageTextIsEmpty: Message text is empty
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPCZGd8VZ5R81y2fWgIvw8m9wHimVIAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPCZGd8VZ5R81y2fWgIvw8m9wHimVIAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 16:40:41 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
-Traceback (most recent call last):
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.MessageTextIsEmpty: Message text is empty
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPDZGfHAZ5hoX5yQDu-lp3Bq8ZaFBUAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPDZGfHAZ5hoX5yQDu-lp3Bq8ZaFBUAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 21:59:14 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at /media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
-Traceback (most recent call last):
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/types/message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/utils/exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.MessageTextIsEmpty: Message text is empty
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPEZGfHuFk-_7tZLbiytu7f0MSEnXYAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPEZGfHuFk-_7tZLbiytu7f0MSEnXYAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Fri May 19 22:02:16 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at /media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
-Traceback (most recent call last):
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/bot.py", line 44, in voice_message_handler
-    await message.reply(stt.audio_to_text(file_path))
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/types/message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/bot/api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "/media/aleksey/data/_programming/aichat_tg_bot/venv/lib/python3.11/site-packages/aiogram/utils/exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.MessageTextIsEmpty: Message text is empty

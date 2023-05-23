@@ -44,7 +44,7 @@ async def voice_message_handler(message: Message):
     print('File successfully downloaded!')
     logging.info(f'File {voice_file_name} saved to {path_to_saved_voice_file} at {time.asctime()}')
 
-    await message.reply(stt.audio_to_text(path_to_saved_voice_file))
+    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
     print('Text sent to user!')
 
 if __name__ == "__main__":
