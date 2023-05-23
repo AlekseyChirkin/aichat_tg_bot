@@ -1,7 +1,7 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 
 
-def transctipt_from_yt_video(video_id):
+def transcript_from_yt_video(video_id):
     text = ''
     # retrieve the available transcripts
     transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
@@ -40,4 +40,4 @@ def transctipt_from_yt_video(video_id):
 
 
 if __name__ == "__main__":
-    print(transctipt_from_yt_video("dqKsBT_gW8s"))
+    print(transcript_from_yt_video("dqKsBT_gW8s"))
