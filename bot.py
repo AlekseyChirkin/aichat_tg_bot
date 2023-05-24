@@ -3,8 +3,12 @@ import time
 from pathlib import Path
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ContentType, Message, File
-from config import TOKEN
 import stt
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+TOKEN = os.getenv("TELEGRAM_TOKEN")
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot=bot)

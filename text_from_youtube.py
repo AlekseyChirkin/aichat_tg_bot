@@ -33,8 +33,8 @@ def transcript_from_yt_video(video_id):
     transcript = transcript_list.find_generated_transcript(['ru'])
 
     transcript = ''
-    for prase in text:
-        transcript += prase['text'] + ' '
+    for phrase in text:
+        transcript += phrase['text'] + ' '
 
     return transcript.lower().strip()
 
