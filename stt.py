@@ -4,16 +4,19 @@ import subprocess
 from datetime import datetime
 from vosk import KaldiRecognizer, Model
 
-
 TESTS_FILES = ['files/test/test-1.ogg', 'files/test/test-2.ogg', 'files/test/test-3.ogg', 'files/test/test-1.wav',
                'files/test/test-2.wav']
+#VOSK_MODEL_PATH = "../_VOSK_big_RU_model"
+VOSK_MODEL_PATH = "model"
+BIT_RATE = 16000
+FFMPEG_PATH = "c:/ffmpeg/bin"
 
 
 class STT:
     default_init = {
-        "model_path": "model",  # путь к папке с файлами STT модели Vosk
-        "sample_rate": 16000,
-        "ffmpeg_path": "c:/ffmpeg/bin"  # путь к ffmpeg
+        "model_path": VOSK_MODEL_PATH,
+        "sample_rate": BIT_RATE,
+        "ffmpeg_path": FFMPEG_PATH
     }
 
     def __init__(self,

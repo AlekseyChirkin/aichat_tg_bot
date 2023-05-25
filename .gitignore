@@ -132,4 +132,4 @@ dmypy.json
 
 tmp/
 
-.big_model
+.big_model/

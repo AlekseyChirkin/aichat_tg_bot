@@ -18,6 +18,7 @@ logging.basicConfig(
     filename="bot.log",
 )
 
+stt_obj = stt.STT()
 
 # Хэндлер на команду /start
 @dp.message_handler(commands=["start"])
@@ -47,7 +48,6 @@ async def voice_message_handler(message: Message):
 
     logging.info(f'File {voice_file_name} saved to {path_to_saved_voice_file} at {time.asctime()}')
 
-    stt_obj = stt.STT()
     await message.reply(stt_obj.audio_to_text(path_to_saved_voice_file))
 
 
