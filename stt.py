@@ -1,48 +1,107 @@
-from vosk import Model, KaldiRecognizer, SetLogLevel
-from pydub import AudioSegment
 import json
 import os
+import subprocess
+from datetime import datetime
+from vosk import KaldiRecognizer, Model
 
 
-# Проверяем наличие модели
-if not os.path.exists("model"):
-    print("Please download the model from https://alphacephei.com/vosk/models and unpack as 'model' in the current "
-          "folder.")
-    exit(1)
-
-# Устанавливаем Frame Rate
-FRAME_RATE = 16000
-CHANNELS = 1
-
-model = Model("model")
-rec = KaldiRecognizer(model, FRAME_RATE)
-rec.SetWords(True)
+TESTS_FILES = ['files/test/test-1.ogg', 'files/test/test-2.ogg', 'files/test/test-3.ogg', 'files/test/test-1.wav',
+               'files/test/test-2.wav']
 
 
-def any2wav(ofn):
-    wfn = ofn[:-4] + '.wav'
-    x = AudioSegment.from_file(ofn)
-    x.export(wfn, format='wav')
+class STT:
+    default_init = {
+        "model_path": "model",  # путь к папке с файлами STT модели Vosk
+        "sample_rate": 16000,
+        "ffmpeg_path": "c:/ffmpeg/bin"  # путь к ffmpeg
+    }
 
+    def __init__(self,
+                 model_path=None,
+                 sample_rate=None,
+                 ffmpeg_path=None
+                 ) -> None:
+        """
+        Настройка модели Vosk для распознования аудио и
+        преобразования его в текст.
 
-def recognize_speech(path_to_file):
-    # Конвертируем в wav
-    any2wav(path_to_file)
-    path_to_file = path_to_file[:-4] + '.wav'
+        :arg model_path:  str  путь до модели Vosk
+        :arg sample_rate: int  частота выборки, обычно 16000
+        :arg ffmpeg_path: str  путь к ffmpeg
+        """
+        self.model_path = model_path if model_path else STT.default_init["model_path"]
+        self.sample_rate = sample_rate if sample_rate else STT.default_init["sample_rate"]
+        self.ffmpeg_path = ffmpeg_path if ffmpeg_path else STT.default_init["ffmpeg_path"]
 
-    # Используя библиотеку pydub делаем предобработку аудио
-    prepared_audio_file = AudioSegment.from_wav(path_to_file)
-    prepared_audio_file = prepared_audio_file.set_channels(CHANNELS)
-    prepared_audio_file = prepared_audio_file.set_frame_rate(FRAME_RATE)
+        self._check_model()
 
-    # Преобразуем вывод в json
-    rec.AcceptWaveform(prepared_audio_file.raw_data)
-    result = rec.Result()
+        model = Model(self.model_path)
+        self.recognizer = KaldiRecognizer(model, self.sample_rate)
+        self.recognizer.SetWords(True)
 
-    # Возвращаем только текст
-    return json.loads(result)["text"]
+    def _check_model(self):
+        if not os.path.exists(self.model_path):
+            raise Exception(
+                "Vosk: сохраните папку model в папку vosk\n"
+                "Скачайте модель по ссылке https://alphacephei.com/vosk/models"
+                            )
+
+        isffmpeg_here = False
+        for file in os.listdir(self.ffmpeg_path):
+            if file.startswith('ffmpeg'):
+                isffmpeg_here = True
+
+        if not isffmpeg_here:
+            raise Exception(
+                "Ffmpeg: сохраните ffmpeg.exe в папку ffmpeg\n"
+                "Скачайте ffmpeg.exe по ссылке https://ffmpeg.org/download.html"
+                            )
+        self.ffmpeg_path = self.ffmpeg_path + '/ffmpeg'
+
+    def audio_to_text(self, audio_file_name=None) -> str:
+        """
+        Offline-распознавание аудио в текст через Vosk
+        :param audio_file_name: str путь и имя аудио файла
+        :return: str распознанный текст
+        """
+        if audio_file_name is None:
+            raise Exception("Укажите путь и имя файла")
+        if not os.path.exists(audio_file_name):
+            raise Exception("Укажите правильный путь и имя файла")
+
+        # Конвертация аудио в wav и результат в process.stdout
+        process = subprocess.Popen(
+            [self.ffmpeg_path,
+             "-loglevel", "quiet",
+             "-i", audio_file_name,          # имя входного файла
+             "-ar", str(self.sample_rate),   # частота выборки
+             "-ac", "1",                     # кол-во каналов
+             "-f", "s16le",                  # кодек для перекодирования, у нас wav
+             "-"                             # имя выходного файла нет, тк читаем из stdout
+             ],
+            stdout=subprocess.PIPE
+                                   )
+
+        # Чтение данных кусками и распознование через модель
+        while True:
+            data = process.stdout.read(4000)
+            if len(data) == 0:
+                break
+            if self.recognizer.AcceptWaveform(data):
+                pass
+
+        # Возвращаем распознанный текст в виде str
+        result_json = self.recognizer.FinalResult()  # это json в виде str
+        result_dict = json.loads(result_json)    # это dict
+        return result_dict["text"]               # текст в виде str
 
 
 if __name__ == "__main__":
-    print(recognize_speech('test/test-2.wav'))
-    print(recognize_speech('test/test-2.ogg'))
+    # Распознование аудио
+    k = 1
+    for test_path in TESTS_FILES:
+        start_time = datetime.now()
+        stt = STT()
+        print(f'Recognized text: {stt.audio_to_text(test_path)}\nTest #{k} completed')
+        print("Время выполнения:", datetime.now() - start_time)
+        k += 1
