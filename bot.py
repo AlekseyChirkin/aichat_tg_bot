@@ -7,6 +7,8 @@ import stt
 from dotenv import load_dotenv
 import os
 
+import text_from_youtube
+
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
 
@@ -35,19 +37,24 @@ async def handle_file(file: File, file_name: str, path: str):
     await bot.download_file(file_path=file.file_path, destination=f"{path}/{file_name}")
 
 
+# @dp.message_handler(content_types=[ContentType.TEXT])
+# async def voice_message_handler(message: Message):
+#     text_from_user = message.text
+#
+#     if 'youtube.com/watch?v=' in text_from_user:
+#         youtube_id = text_from_user[:-11]
+#         await message.reply(text_from_youtube.transcript_from_yt_video(youtube_id))
+
+
 @dp.message_handler(content_types=[ContentType.VOICE])
 async def voice_message_handler(message: Message):
-    print('Received audio message!')
     voice = await message.voice.get_file()
-
     path_to_save_voices = "files/voices"
     voice_file_name = voice.file_id + '.ogg'
     path_to_saved_voice_file = str(path_to_save_voices) + '/' + voice_file_name
-
     await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
 
     logging.info(f'File {voice_file_name} saved to {path_to_saved_voice_file} at {time.asctime()}')
-
     await message.reply(stt_obj.audio_to_text(path_to_saved_voice_file))
 
 

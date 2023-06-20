@@ -247,3 +247,97 @@ INFO:root:File AwACAgIAAxkBAAPqZJF1-hRiHMpXeEE5J5dtdgAB6EanAAIxMAACKy-BSNMWdGEik
 INFO:root:File AwACAgIAAxkBAAPsZJF2GaUg1rAjKOE0dGdMxQABJH8TAAIVLwACKy-BSMNCp7g6J9R-LwQ.ogg saved to files/voices/AwACAgIAAxkBAAPsZJF2GaUg1rAjKOE0dGdMxQABJH8TAAIVLwACKy-BSMNCp7g6J9R-LwQ.ogg at Tue Jun 20 12:49:19 2023
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:File AwACAgIAAxkBAAPuZJGQh5099u7gIGEoGac0KJth8J8AAoIxAAJdCnFIlHvH-1r_6fAvBA.ogg saved to files/voices/AwACAgIAAxkBAAPuZJGQh5099u7gIGEoGac0KJth8J8AAoIxAAJdCnFIlHvH-1r_6fAvBA.ogg at Tue Jun 20 14:42:05 2023
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:File AwACAgIAAxkBAAPwZJGVAtirhZP_GpdX_iBL__POO6IAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg saved to files/voices/AwACAgIAAxkBAAPwZJGVAtirhZP_GpdX_iBL__POO6IAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg at Tue Jun 20 15:01:12 2023
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=InvalidVideoId('\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:\n\nYou provided an invalid video id. Make sure you are using the video id and NOT the url!\n\nDo NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`\nInstead run: `YouTubeTranscriptApi.get_transcript("1234")`\n\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!')>
+Traceback (most recent call last):
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\bot.py", line 46, in voice_message_handler
+    await message.reply(text_from_youtube.transcript_from_yt_video(youtube_id))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\text_from_youtube.py", line 15, in transcript_from_yt_video
+    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_api.py", line 71, in list_transcripts
+    return TranscriptListFetcher(http_client).fetch(video_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 48, in fetch
+    self._extract_captions_json(self._fetch_video_html(video_id), video_id),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 56, in _extract_captions_json
+    raise InvalidVideoId(video_id)
+youtube_transcript_api._errors.InvalidVideoId: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:
+
+You provided an invalid video id. Make sure you are using the video id and NOT the url!
+
+Do NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`
+Instead run: `YouTubeTranscriptApi.get_transcript("1234")`
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=InvalidVideoId('\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:\n\nYou provided an invalid video id. Make sure you are using the video id and NOT the url!\n\nDo NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`\nInstead run: `YouTubeTranscriptApi.get_transcript("1234")`\n\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!')>
+Traceback (most recent call last):
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\bot.py", line 46, in voice_message_handler
+    await message.reply(text_from_youtube.transcript_from_yt_video(youtube_id))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\text_from_youtube.py", line 15, in transcript_from_yt_video
+    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_api.py", line 71, in list_transcripts
+    return TranscriptListFetcher(http_client).fetch(video_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 48, in fetch
+    self._extract_captions_json(self._fetch_video_html(video_id), video_id),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 56, in _extract_captions_json
+    raise InvalidVideoId(video_id)
+youtube_transcript_api._errors.InvalidVideoId: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:
+
+You provided an invalid video id. Make sure you are using the video id and NOT the url!
+
+Do NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`
+Instead run: `YouTubeTranscriptApi.get_transcript("1234")`
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!

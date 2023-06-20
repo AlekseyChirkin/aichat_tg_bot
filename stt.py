@@ -6,9 +6,11 @@ from vosk import KaldiRecognizer, Model
 
 TESTS_FILES = ['files/test/test-1.ogg', 'files/test/test-2.ogg', 'files/test/test-3.ogg', 'files/test/test-1.wav',
                'files/test/test-2.wav']
+# Путь к языковой модели
 #VOSK_MODEL_PATH = "../_VOSK_big_RU_model"
 VOSK_MODEL_PATH = "model"
 BIT_RATE = 16000
+# Путь к FFMPEG
 FFMPEG_PATH = "c:/ffmpeg/bin"
 
 
@@ -100,11 +102,11 @@ class STT:
 
 
 if __name__ == "__main__":
-    # Распознование аудио
+    # Инициализируем объект и разспознаем тестовые файлы
     k = 1
+    stt = STT()
     for test_path in TESTS_FILES:
         start_time = datetime.now()
-        stt = STT()
-        print(f'Recognized text: {stt.audio_to_text(test_path)}\nTest #{k} completed')
+        print(f'\nTest #{k} completed\nRecognized text: {stt.audio_to_text(test_path)}')
         print("Время выполнения:", datetime.now() - start_time)
         k += 1
