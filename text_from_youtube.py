@@ -51,4 +51,4 @@ def transcript_from_yt_video(video_id):
 
 
 if __name__ == "__main__":
-    print(transcript_from_yt_video("3eWH2hRlvaY"))
+    print(transcript_from_yt_video("XK6v8L_4Oj0"))

@@ -239,3 +239,11 @@ INFO:aiogram.dispatcher.dispatcher:Start polling.
 INFO:root:File AwACAgIAAxkBAAPNZG9y09vQCrt8Ctyfb1Ng2o8WYwkAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg saved to files/voices/AwACAgIAAxkBAAPNZG9y09vQCrt8Ctyfb1Ng2o8WYwkAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg at Thu May 25 17:38:11 2023
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:File AwACAgIAAxkBAAPoZJF107mCgrBurUXHkh2-Qc0BE4QAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPoZJF107mCgrBurUXHkh2-Qc0BE4QAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Tue Jun 20 12:48:08 2023
+INFO:root:File AwACAgIAAxkBAAPqZJF1-hRiHMpXeEE5J5dtdgAB6EanAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg saved to files/voices/AwACAgIAAxkBAAPqZJF1-hRiHMpXeEE5J5dtdgAB6EanAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg at Tue Jun 20 12:48:48 2023
+INFO:root:File AwACAgIAAxkBAAPsZJF2GaUg1rAjKOE0dGdMxQABJH8TAAIVLwACKy-BSMNCp7g6J9R-LwQ.ogg saved to files/voices/AwACAgIAAxkBAAPsZJF2GaUg1rAjKOE0dGdMxQABJH8TAAIVLwACKy-BSMNCp7g6J9R-LwQ.ogg at Tue Jun 20 12:49:19 2023
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
