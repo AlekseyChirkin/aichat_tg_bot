@@ -7,8 +7,8 @@ from vosk import KaldiRecognizer, Model
 TESTS_FILES = ['files/test/test-1.ogg', 'files/test/test-2.ogg', 'files/test/test-3.ogg', 'files/test/test-1.wav',
                'files/test/test-2.wav']
 # Путь к языковой модели
-#VOSK_MODEL_PATH = "../_VOSK_big_RU_model"
-VOSK_MODEL_PATH = "model"
+VOSK_MODEL_PATH = "../_VOSK_big_RU_model"
+#VOSK_MODEL_PATH = "model"
 BIT_RATE = 16000
 # Путь к FFMPEG
 FFMPEG_PATH = "c:/ffmpeg/bin"

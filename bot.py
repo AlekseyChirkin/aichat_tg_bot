@@ -21,6 +21,8 @@ logging.basicConfig(
 )
 
 stt_obj = stt.STT()
+print(f'Object {stt_obj=} created...')
+
 
 # Хэндлер на команду /start
 @dp.message_handler(commands=["start"])

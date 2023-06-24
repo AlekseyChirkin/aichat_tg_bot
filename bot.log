@@ -341,3 +341,13 @@ Instead run: `YouTubeTranscriptApi.get_transcript("1234")`
 If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:File AwACAgIAAxkBAAP6ZJIMNxKp6CPZrugZZxJ404ZBlBoAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg saved to files/voices/AwACAgIAAxkBAAP6ZJIMNxKp6CPZrugZZxJ404ZBlBoAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg at Tue Jun 20 23:30:02 2023
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:File AwACAgIAAxkBAAP8ZJLE45MEWmO-ukqn3oJgiATHQFEAApMsAAIGOYhIv1fK4mD2VSIvBA.ogg saved to files/voices/AwACAgIAAxkBAAP8ZJLE45MEWmO-ukqn3oJgiATHQFEAApMsAAIGOYhIv1fK4mD2VSIvBA.ogg at Wed Jun 21 12:37:58 2023
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
