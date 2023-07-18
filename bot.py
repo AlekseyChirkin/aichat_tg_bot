@@ -7,6 +7,8 @@ import stt
 from dotenv import load_dotenv
 import os
 
+import g4f
+
 import text_from_youtube
 
 load_dotenv()
@@ -57,10 +59,20 @@ async def voice_message_handler(message: Message):
     await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
 
     logging.info(f'File {voice_file_name} saved to {path_to_saved_voice_file} at {time.asctime()}')
-    await message.reply(stt_obj.audio_to_text(path_to_saved_voice_file))
+    text_from_message = stt_obj.audio_to_text(path_to_saved_voice_file)
+
+    # Получаем ответ от нейросети
+    print(g4f.Provider.Ails.params) # supported args
+
+    # streamed completion
+    response = g4f.ChatCompletion.create(model='gpt-3.5-turbo', messages=[{"role": "user", "content": text_from_message}], stream=True)
+
+    await message.reply(response)
 
 
 if __name__ == "__main__":
+
+    # polling bot
     try:
         executor.start_polling(dp, skip_updates=True)
     except (KeyboardInterrupt, SystemExit):

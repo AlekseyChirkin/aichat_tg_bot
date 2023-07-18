@@ -80,19 +80,32 @@ pydub.exceptions.CouldntDecodeError: Decoding failed. ffmpeg returned error code
 
 Output from ffmpeg/avlib:
 
-ffmpeg version 2023-05-15-git-2953ebe7b6-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
-  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
-  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
-  libavutil      58.  7.100 / 58.  7.100
-  libavcodec     60. 12.100 / 60. 12.100
-  libavformat    60.  5.100 / 60.  5.100
-  libavdevice    60.  2.100 / 60.  2.100
-  libavfilter     9.  8.100 /  9.  8.100
-  libswscale      7.  2.100 /  7.  2.100
-  libswresample   4. 11.100 /  4. 11.100
-  libpostproc    57.  2.100 / 57.  2.100
-[wav @ 0000027546f1db40] invalid start code OggS in RIFF header
-files/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg: Invalid data found when processing input
+ffmpeg version 2023-05-15-git-2953ebe7b6-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
+
+  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
+
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
+
+  libavutil      58.  7.100 / 58.  7.100
+
+  libavcodec     60. 12.100 / 60. 12.100
+
+  libavformat    60.  5.100 / 60.  5.100
+
+  libavdevice    60.  2.100 / 60.  2.100
+
+  libavfilter     9.  8.100 /  9.  8.100
+
+  libswscale      7.  2.100 /  7.  2.100
+
+  libswresample   4. 11.100 /  4. 11.100
+
+  libpostproc    57.  2.100 / 57.  2.100
+
+[wav @ 0000027546f1db40] invalid start code OggS in RIFF header
+
+files/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg: Invalid data found when processing input
+
 
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
@@ -192,7 +205,7 @@ WARNING:aiogram:Goodbye!
 INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:user_id=319249711 user_full_name='Алексей' Thu May 25 16:45:01 2023
+INFO:root:user_id=319249711 user_full_name='пїЅпїЅпїЅпїЅпїЅпїЅпїЅ' Thu May 25 16:45:01 2023
 INFO:root:File AwACAgIAAxkBAAPMZG9mblVOx54GcLlMvVu667z88-wAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg saved to files/voices/AwACAgIAAxkBAAPMZG9mblVOx54GcLlMvVu667z88-wAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg at Thu May 25 16:45:18 2023
 ERROR:asyncio:Task exception was never retrieved
 future: <Task finished name='Task-15' coro=<Dispatcher._process_polling_updates() done, defined at D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
@@ -351,3 +364,23 @@ INFO:aiogram.dispatcher.dispatcher:Start polling.
 INFO:root:File AwACAgIAAxkBAAP8ZJLE45MEWmO-ukqn3oJgiATHQFEAApMsAAIGOYhIv1fK4mD2VSIvBA.ogg saved to files/voices/AwACAgIAAxkBAAP8ZJLE45MEWmO-ukqn3oJgiATHQFEAApMsAAIGOYhIv1fK4mD2VSIvBA.ogg at Wed Jun 21 12:37:58 2023
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Tue Jul 18 10:45:30 2023
+INFO:root:File AwACAgIAAxkBAAIBCGS2QyQS9bUVhViVjHDAvW8h1FK8AALqLAACN6WwSW7tENA-JvjcLwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBCGS2QyQS9bUVhViVjHDAvW8h1FK8AALqLAACN6WwSW7tENA-JvjcLwQ.ogg at Tue Jul 18 10:45:43 2023
+INFO:root:File AwACAgIAAxkBAAIBCmS2QzOOfg-ARZnUfZqLEsEKBrCzAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBCmS2QzOOfg-ARZnUfZqLEsEKBrCzAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg at Tue Jul 18 10:45:59 2023
+INFO:root:File AwACAgIAAxkBAAIBDGS2Q0O25PEcBGtbkk3sQ3yzaMQrAAJrMgAC99axSV8WkaVcuVq5LwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBDGS2Q0O25PEcBGtbkk3sQ3yzaMQrAAJrMgAC99axSV8WkaVcuVq5LwQ.ogg at Tue Jul 18 10:46:15 2023
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Tue Jul 18 11:10:15 2023
+INFO:root:File AwACAgIAAxkBAAIBEGS2SO9DYnrlwQABoMu7lMWri9-h9QACazIAAvfWsUlfFpGlXLlauS8E.ogg saved to files/voices/AwACAgIAAxkBAAIBEGS2SO9DYnrlwQABoMu7lMWri9-h9QACazIAAvfWsUlfFpGlXLlauS8E.ogg at Tue Jul 18 11:10:26 2023
+INFO:root:File AwACAgIAAxkBAAIBEmS2SPr8GcNer7zGL_cC3OZlltmXAALqLAACN6WwSW7tENA-JvjcLwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBEmS2SPr8GcNer7zGL_cC3OZlltmXAALqLAACN6WwSW7tENA-JvjcLwQ.ogg at Tue Jul 18 11:10:37 2023
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
