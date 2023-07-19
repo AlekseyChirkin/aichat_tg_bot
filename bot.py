@@ -11,7 +11,6 @@ from art import tprint
 import g4f_responce
 
 import text_from_youtube
-import on_exit
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -72,8 +71,8 @@ async def voice_message_handler(message: Message):
     await message.reply(f"Распознанный текст:\n {text_from_message}")
 
     # Получаем ответ от нейросети
-    # response = g4f_responce.get_responce(text_from_message)
-    # await message.answer(response)
+    response = g4f_responce.get_responce(text_from_message)
+    await message.answer(response)
 
 if __name__ == "__main__":
 
@@ -81,6 +80,5 @@ if __name__ == "__main__":
     try:
         executor.start_polling(dp, skip_updates=True)
     except (KeyboardInterrupt, SystemExit):
-        on_exit.delete_voices_temp_files()
-        print('Good bye!')
+        tprint('Good bye!')
         pass
