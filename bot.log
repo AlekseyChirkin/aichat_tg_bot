@@ -1,11 +1,14 @@
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
 INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPGZGx4gqAEwuYouyJd2EGYVCkRoiIAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPGZGx4gqAEwuYouyJd2EGYVCkRoiIAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Tue May 23 11:25:41 2023
+INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Wed Jul 19 17:33:45 2023
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
+future: <Task finished name='Task-17' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'handle_file' is not defined")>
 Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -22,33 +25,18 @@ Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 47, in voice_message_handler
-    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.MessageTextIsEmpty: Message text is empty
+  File "C:\temp\aichat_tg_bot\bot.py", line 67, in voice_message_handler
+    await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
+          ^^^^^^^^^^^
+NameError: name 'handle_file' is not defined
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
 INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Tue May 23 11:49:14 2023
+INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Wed Jul 19 17:36:29 2023
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=CouldntDecodeError('Decoding failed. ffmpeg returned error code: 1\n\nOutput from ffmpeg/avlib:\n\nffmpeg version 2023-05-15-git-2953ebe7b6-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers\r\n  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)\r\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint\r\n  libavutil      58.  7.100 / 58.  7.100\r\n  libavcodec     60. 12.100 / 60. 12.100\r\n  libavformat    60.  5.100 / 60.  5.100\r\n  libavdevice    60.  2.100 / 60.  2.100\r\n  libavfilter     9.  8.100 /  9.  8.100\r\n  libswscale      7.  2.100 /  7.  2.100\r\n  libswresample   4. 11.100 /  4. 11.100\r\n  libpostproc    57.  2.100 / 57.  2.100\r\n[wav @ 0000027546f1db40] invalid start code OggS in RIFF header\r\nfiles/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg: Invalid data found when processing input\r\n')>
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'handle_file' is not defined")>
 Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -65,213 +53,17 @@ Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 47, in voice_message_handler
-    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\stt.py", line 23, in recognize_speech
-    wav = AudioSegment.from_wav(path_to_file)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\pydub\audio_segment.py", line 808, in from_wav
-    return cls.from_file(file, 'wav', parameters=parameters)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\pydub\audio_segment.py", line 773, in from_file
-    raise CouldntDecodeError(
-pydub.exceptions.CouldntDecodeError: Decoding failed. ffmpeg returned error code: 1
-
-Output from ffmpeg/avlib:
-
-ffmpeg version 2023-05-15-git-2953ebe7b6-full_build-www.gyan.dev Copyright (c) 2000-2023 the FFmpeg developers
-
-  built with gcc 12.2.0 (Rev10, Built by MSYS2 project)
-
-  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libuavs3d --enable-libzvbi --enable-librav1e --enable-libsvtav1 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libaom --enable-libjxl --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-ffnvcodec --enable-nvdec --enable-nvenc --enable-d3d11va --enable-dxva2 --enable-libvpl --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint
-
-  libavutil      58.  7.100 / 58.  7.100
-
-  libavcodec     60. 12.100 / 60. 12.100
-
-  libavformat    60.  5.100 / 60.  5.100
-
-  libavdevice    60.  2.100 / 60.  2.100
-
-  libavfilter     9.  8.100 /  9.  8.100
-
-  libswscale      7.  2.100 /  7.  2.100
-
-  libswresample   4. 11.100 /  4. 11.100
-
-  libpostproc    57.  2.100 / 57.  2.100
-
-[wav @ 0000027546f1db40] invalid start code OggS in RIFF header
-
-files/voices/AwACAgIAAxkBAAPHZGx-BxxNSoDhRw8SHjU9cBX0LQsAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg: Invalid data found when processing input
-
-
+  File "C:\temp\aichat_tg_bot\bot.py", line 67, in voice_message_handler
+    await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
+          ^^^^^^^^^^^
+NameError: name 'handle_file' is not defined
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
 INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
 WARNING:aiogram:Updates were skipped successfully.
 INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPIZG4r00Vg4IQQr9J0uQp-HLgC0v8AAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPIZG4r00Vg4IQQr9J0uQp-HLgC0v8AAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Wed May 24 18:22:58 2023
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-11' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=FileNotFoundError(2, 'The system cannot find the file specified', None, 2, None)>
-Traceback (most recent call last):
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\bot.py", line 51, in voice_message_handler
-    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\stt.py", line 29, in recognize_speech
-    any2wav(path_to_file)
-  File "D:\_programming\aichat_tg_bot\stt.py", line 9, in any2wav
-    x = AudioSegment.from_file(ofn)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pydub\audio_segment.py", line 728, in from_file
-    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pydub\utils.py", line 274, in mediainfo_json
-    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1024, in __init__
-    self._execute_child(args, executable, preexec_fn, close_fds,
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1493, in _execute_child
-    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [WinError 2] The system cannot find the file specified
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPJZG4tPkBmMpxjyXQ7ZmR1br1RpiQAAqAuAALd9HBLEd1KiXd6TNgvBA.ogg saved to files/voices/AwACAgIAAxkBAAPJZG4tPkBmMpxjyXQ7ZmR1br1RpiQAAqAuAALd9HBLEd1KiXd6TNgvBA.ogg at Wed May 24 18:29:02 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-10' coro=<Dispatcher._process_polling_updates() done, defined at C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=FileNotFoundError(2, 'The system cannot find the file specified', None, 2, None)>
-Traceback (most recent call last):
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\bot.py", line 51, in voice_message_handler
-    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\stt.py", line 30, in recognize_speech
-    any2wav(path_to_file)
-  File "D:\_programming\aichat_tg_bot\stt.py", line 24, in any2wav
-    x = AudioSegment.from_file(ofn)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pydub\audio_segment.py", line 728, in from_file
-    info = mediainfo_json(orig_file, read_ahead_limit=read_ahead_limit)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\site-packages\pydub\utils.py", line 274, in mediainfo_json
-    res = Popen(command, stdin=stdin_parameter, stdout=PIPE, stderr=PIPE)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1024, in __init__
-    self._execute_child(args, executable, preexec_fn, close_fds,
-  File "C:\Users\user\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 1493, in _execute_child
-    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [WinError 2] The system cannot find the file specified
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:user_id=319249711 user_full_name='�������' Thu May 25 16:45:01 2023
-INFO:root:File AwACAgIAAxkBAAPMZG9mblVOx54GcLlMvVu667z88-wAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg saved to files/voices/AwACAgIAAxkBAAPMZG9mblVOx54GcLlMvVu667z88-wAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg at Thu May 25 16:45:18 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-15' coro=<Dispatcher._process_polling_updates() done, defined at D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=MessageTextIsEmpty('Message text is empty')>
-Traceback (most recent call last):
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
-    return await asyncio.gather(*tasks)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
-    return await self.message_handlers.notify(update.message)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\bot.py", line 51, in voice_message_handler
-    await message.reply(stt.recognize_speech(path_to_saved_voice_file))
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\types\message.py", line 1687, in reply
-    return await self.bot.send_message(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\bot.py", line 346, in send_message
-    result = await self.request(api.Methods.SEND_MESSAGE, payload)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\base.py", line 236, in request
-    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 140, in make_request
-    return check_result(method, response.content_type, response.status, await response.text())
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\bot\api.py", line 115, in check_result
-    exceptions.BadRequest.detect(description)
-  File "D:\_programming\aichat_tg_bot\venv\Lib\site-packages\aiogram\utils\exceptions.py", line 140, in detect
-    raise err(cls.text or description)
-aiogram.utils.exceptions.MessageTextIsEmpty: Message text is empty
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPNZG9y09vQCrt8Ctyfb1Ng2o8WYwkAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg saved to files/voices/AwACAgIAAxkBAAPNZG9y09vQCrt8Ctyfb1Ng2o8WYwkAAh8uAALeqoFLQ5Q1BqFjllIvBA.ogg at Thu May 25 17:38:11 2023
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPoZJF107mCgrBurUXHkh2-Qc0BE4QAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg saved to files/voices/AwACAgIAAxkBAAPoZJF107mCgrBurUXHkh2-Qc0BE4QAAkMwAAI7KgABSwzgWBm_F7qELwQ.ogg at Tue Jun 20 12:48:08 2023
-INFO:root:File AwACAgIAAxkBAAPqZJF1-hRiHMpXeEE5J5dtdgAB6EanAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg saved to files/voices/AwACAgIAAxkBAAPqZJF1-hRiHMpXeEE5J5dtdgAB6EanAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg at Tue Jun 20 12:48:48 2023
-INFO:root:File AwACAgIAAxkBAAPsZJF2GaUg1rAjKOE0dGdMxQABJH8TAAIVLwACKy-BSMNCp7g6J9R-LwQ.ogg saved to files/voices/AwACAgIAAxkBAAPsZJF2GaUg1rAjKOE0dGdMxQABJH8TAAIVLwACKy-BSMNCp7g6J9R-LwQ.ogg at Tue Jun 20 12:49:19 2023
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPuZJGQh5099u7gIGEoGac0KJth8J8AAoIxAAJdCnFIlHvH-1r_6fAvBA.ogg saved to files/voices/AwACAgIAAxkBAAPuZJGQh5099u7gIGEoGac0KJth8J8AAoIxAAJdCnFIlHvH-1r_6fAvBA.ogg at Tue Jun 20 14:42:05 2023
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAPwZJGVAtirhZP_GpdX_iBL__POO6IAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg saved to files/voices/AwACAgIAAxkBAAPwZJGVAtirhZP_GpdX_iBL__POO6IAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg at Tue Jun 20 15:01:12 2023
-ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-17' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=InvalidVideoId('\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:\n\nYou provided an invalid video id. Make sure you are using the video id and NOT the url!\n\nDo NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`\nInstead run: `YouTubeTranscriptApi.get_transcript("1234")`\n\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!')>
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'handle_file' is not defined")>
 Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -288,31 +80,18 @@ Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 46, in voice_message_handler
-    await message.reply(text_from_youtube.transcript_from_yt_video(youtube_id))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\text_from_youtube.py", line 15, in transcript_from_yt_video
-    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_api.py", line 71, in list_transcripts
-    return TranscriptListFetcher(http_client).fetch(video_id)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 48, in fetch
-    self._extract_captions_json(self._fetch_video_html(video_id), video_id),
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 56, in _extract_captions_json
-    raise InvalidVideoId(video_id)
-youtube_transcript_api._errors.InvalidVideoId: 
-Could not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:
-
-You provided an invalid video id. Make sure you are using the video id and NOT the url!
-
-Do NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`
-Instead run: `YouTubeTranscriptApi.get_transcript("1234")`
-
-If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+  File "C:\temp\aichat_tg_bot\bot.py", line 67, in voice_message_handler
+    await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
+          ^^^^^^^^^^^
+NameError: name 'handle_file' is not defined
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Wed Jul 19 17:44:09 2023
 ERROR:asyncio:Task exception was never retrieved
-future: <Task finished name='Task-21' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=InvalidVideoId('\nCould not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:\n\nYou provided an invalid video id. Make sure you are using the video id and NOT the url!\n\nDo NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`\nInstead run: `YouTubeTranscriptApi.get_transcript("1234")`\n\nIf you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!')>
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'handle_file' is not defined")>
 Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
     for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
@@ -329,58 +108,59 @@ Traceback (most recent call last):
   File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
     response = await handler_obj.handler(*args, **partial_data)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\bot.py", line 46, in voice_message_handler
-    await message.reply(text_from_youtube.transcript_from_yt_video(youtube_id))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\text_from_youtube.py", line 15, in transcript_from_yt_video
-    transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_api.py", line 71, in list_transcripts
-    return TranscriptListFetcher(http_client).fetch(video_id)
+  File "C:\temp\aichat_tg_bot\bot.py", line 67, in voice_message_handler
+    await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
+          ^^^^^^^^^^^
+NameError: name 'handle_file' is not defined
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Wed Jul 19 17:45:06 2023
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'handle_file' is not defined")>
+Traceback (most recent call last):
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 48, in fetch
-    self._extract_captions_json(self._fetch_video_html(video_id), video_id),
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\youtube_transcript_api\_transcripts.py", line 56, in _extract_captions_json
-    raise InvalidVideoId(video_id)
-youtube_transcript_api._errors.InvalidVideoId: 
-Could not retrieve a transcript for the video https://www.youtube.com/watch?v=https://www.youtube.com/watch?v=! This is most likely caused by:
-
-You provided an invalid video id. Make sure you are using the video id and NOT the url!
-
-Do NOT run: `YouTubeTranscriptApi.get_transcript("https://www.youtube.com/watch?v=1234")`
-Instead run: `YouTubeTranscriptApi.get_transcript("1234")`
-
-If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\bot.py", line 67, in voice_message_handler
+    await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
+          ^^^^^^^^^^^
+NameError: name 'handle_file' is not defined
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'handle_file' is not defined")>
+Traceback (most recent call last):
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\bot.py", line 67, in voice_message_handler
+    await handle_file(file=voice, file_name=voice_file_name, path=path_to_save_voices)
+          ^^^^^^^^^^^
+NameError: name 'handle_file' is not defined
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAP6ZJIMNxKp6CPZrugZZxJ404ZBlBoAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg saved to files/voices/AwACAgIAAxkBAAP6ZJIMNxKp6CPZrugZZxJ404ZBlBoAAjEwAAIrL4FI0xZ0YSKRj1ovBA.ogg at Tue Jun 20 23:30:02 2023
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:File AwACAgIAAxkBAAP8ZJLE45MEWmO-ukqn3oJgiATHQFEAApMsAAIGOYhIv1fK4mD2VSIvBA.ogg saved to files/voices/AwACAgIAAxkBAAP8ZJLE45MEWmO-ukqn3oJgiATHQFEAApMsAAIGOYhIv1fK4mD2VSIvBA.ogg at Wed Jun 21 12:37:58 2023
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Tue Jul 18 10:45:30 2023
-INFO:root:File AwACAgIAAxkBAAIBCGS2QyQS9bUVhViVjHDAvW8h1FK8AALqLAACN6WwSW7tENA-JvjcLwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBCGS2QyQS9bUVhViVjHDAvW8h1FK8AALqLAACN6WwSW7tENA-JvjcLwQ.ogg at Tue Jul 18 10:45:43 2023
-INFO:root:File AwACAgIAAxkBAAIBCmS2QzOOfg-ARZnUfZqLEsEKBrCzAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBCmS2QzOOfg-ARZnUfZqLEsEKBrCzAAIxMAACKy-BSNMWdGEikY9aLwQ.ogg at Tue Jul 18 10:45:59 2023
-INFO:root:File AwACAgIAAxkBAAIBDGS2Q0O25PEcBGtbkk3sQ3yzaMQrAAJrMgAC99axSV8WkaVcuVq5LwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBDGS2Q0O25PEcBGtbkk3sQ3yzaMQrAAJrMgAC99axSV8WkaVcuVq5LwQ.ogg at Tue Jul 18 10:46:15 2023
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.
-INFO:root:user_id=319249711 user_full_name='\u0410\u043b\u0435\u043a\u0441\u0435\u0439' Tue Jul 18 11:10:15 2023
-INFO:root:File AwACAgIAAxkBAAIBEGS2SO9DYnrlwQABoMu7lMWri9-h9QACazIAAvfWsUlfFpGlXLlauS8E.ogg saved to files/voices/AwACAgIAAxkBAAIBEGS2SO9DYnrlwQABoMu7lMWri9-h9QACazIAAvfWsUlfFpGlXLlauS8E.ogg at Tue Jul 18 11:10:26 2023
-INFO:root:File AwACAgIAAxkBAAIBEmS2SPr8GcNer7zGL_cC3OZlltmXAALqLAACN6WwSW7tENA-JvjcLwQ.ogg saved to files/voices/AwACAgIAAxkBAAIBEmS2SPr8GcNer7zGL_cC3OZlltmXAALqLAACN6WwSW7tENA-JvjcLwQ.ogg at Tue Jul 18 11:10:37 2023
-INFO:aiogram.dispatcher.dispatcher:Stop polling...
-WARNING:aiogram:Goodbye!
-INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
-WARNING:aiogram:Updates were skipped successfully.
-INFO:aiogram.dispatcher.dispatcher:Start polling.

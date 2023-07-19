@@ -6,10 +6,12 @@ from aiogram.types import ContentType, Message, File
 import stt
 from dotenv import load_dotenv
 import os
+from art import tprint
 
-import g4f
+import g4f_responce
 
 import text_from_youtube
+import on_exit
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -23,7 +25,8 @@ logging.basicConfig(
 )
 
 stt_obj = stt.STT()
-print(f'Object {stt_obj=} created...')
+#print(f'Object {stt_obj=} created!')
+tprint("Working...")
 
 
 # Хэндлер на команду /start
@@ -35,10 +38,15 @@ async def cmd_start(message: types.Message):
     await message.reply(f"Hi, {user_full_name}, my captain!\nWaiting for orders...")
 
 
-async def handle_file(file: File, file_name: str, path: str):
-    Path(f"{path}").mkdir(parents=True, exist_ok=True)
+@dp.message_handler(content_types="text")
+async def echo_from_g4f(message: types.Message):
+    # Отправляем ответ нейросети
+    await message.answer(g4f_responce.get_responce(message.text))
 
-    await bot.download_file(file_path=file.file_path, destination=f"{path}/{file_name}")
+
+# async def handle_file(file: File, file_name: str, path: str):
+#     Path(f"{path}").mkdir(parents=True, exist_ok=True)
+#     await bot.download_file(file_path=file.file_path, destination=f"{path}/{file_name}")
 
 
 # @dp.message_handler(content_types=[ContentType.TEXT])
@@ -60,15 +68,12 @@ async def voice_message_handler(message: Message):
 
     logging.info(f'File {voice_file_name} saved to {path_to_saved_voice_file} at {time.asctime()}')
     text_from_message = stt_obj.audio_to_text(path_to_saved_voice_file)
+    
+    await message.reply(f"Распознанный текст:\n {text_from_message}")
 
     # Получаем ответ от нейросети
-    print(g4f.Provider.Ails.params) # supported args
-
-    # streamed completion
-    response = g4f.ChatCompletion.create(model='gpt-3.5-turbo', messages=[{"role": "user", "content": text_from_message}], stream=True)
-
-    await message.reply(response)
-
+    # response = g4f_responce.get_responce(text_from_message)
+    # await message.answer(response)
 
 if __name__ == "__main__":
 
@@ -76,5 +81,6 @@ if __name__ == "__main__":
     try:
         executor.start_polling(dp, skip_updates=True)
     except (KeyboardInterrupt, SystemExit):
+        on_exit.delete_voices_temp_files()
         print('Good bye!')
         pass
