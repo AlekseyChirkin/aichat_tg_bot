@@ -88,3 +88,31 @@ Traceback (most recent call last):
 NameError: name 'handle_file' is not defined
 INFO:aiogram.dispatcher.dispatcher:Stop polling...
 WARNING:aiogram:Goodbye!
+INFO:root:Object stt_obj=<stt.STT object at 0x000001BEC2C14D50> created successfull!
+INFO:aiogram:Bot: ai_chat_bot [@personal_assistant_reminder_bot]
+WARNING:aiogram:Updates were skipped successfully.
+INFO:aiogram.dispatcher.dispatcher:Start polling.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<Dispatcher._process_polling_updates() done, defined at C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'handle_file' is not defined")>
+Traceback (most recent call last):
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\venv\Lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\temp\aichat_tg_bot\bot.py", line 46, in voice_message_handler
+    await handle_file(file=voice, file_name=voice_file_name, path=path_voices_tmp)
+          ^^^^^^^^^^^
+NameError: name 'handle_file' is not defined
+INFO:aiogram.dispatcher.dispatcher:Stop polling...
+WARNING:aiogram:Goodbye!

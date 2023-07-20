@@ -34,20 +34,6 @@ async def cmd_start(message: types.Message):
     await message.reply(f"Hi, {user_full_name}, my captain!\nWaiting for orders...")
 
 
-# На текст пользователя отвечает сразу нейросетью
-@dp.message_handler(content_types="text")
-async def echo_from_g4f(message: types.Message):
-    await message.answer(g4f_responce.get_responce(message.text))
-
-
-### Здесь должена быть обработка сообщения, если к нему приложено видео с ютуб ###
-# @dp.message_handler(content_types=[ContentType.TEXT])
-# async def voice_message_handler(message: Message):
-#     text_from_user = message.text
-#     if 'youtube.com/watch?v=' in text_from_user:
-#         youtube_id = text_from_user[:-11]
-#         await message.reply(text_from_youtube.transcript_from_yt_video(youtube_id))
-
 # Обработка голосового сообщения
 @dp.message_handler(content_types=[ContentType.VOICE])
 async def voice_message_handler(message: Message):
@@ -65,6 +51,22 @@ async def voice_message_handler(message: Message):
     # response = g4f_responce.get_responce(text_from_message)
     # await message.reply(response)
     await message.reply(text_from_message)
+
+
+# На текст пользователя отвечает сразу нейросетью
+@dp.message_handler(content_types="text")
+async def echo_from_g4f(message: types.Message):
+    await message.answer(g4f_responce.get_responce(message.text))
+
+
+### Здесь должена быть обработка сообщения, если к нему приложено видео с ютуб ###
+# @dp.message_handler(content_types=[ContentType.TEXT])
+# async def voice_message_handler(message: Message):
+#     text_from_user = message.text
+#     if 'youtube.com/watch?v=' in text_from_user:
+#         youtube_id = text_from_user[:-11]
+#         await message.reply(text_from_youtube.transcript_from_yt_video(youtube_id))
+
 
 if __name__ == "__main__":
     # polling bot
