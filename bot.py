@@ -7,7 +7,7 @@ import stt
 from dotenv import load_dotenv
 import os
 from art import tprint
-import ai_llama2
+import ai_llama2, g_translate
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -55,16 +55,18 @@ async def voice_message_handler(message: Message):
     await message.reply(ai_response(text_from_message))
 
 
-# На текст пользователя отвечает сразу нейросетью
+# Отвечаем на текс пользователя
 @dp.message_handler(content_types="text")
 async def text_reply(message: types.Message):
     await message.answer(ai_response(message.text))
 
-
+# Ответ нейросети здесь
 def ai_response(request_str: str):
-    logging.info(f"Request to AI: \n{request_str}\n")   
-    answer_from_ai = ai_llama2.get_answer(request_str)
+    request_in_eng = g_translate.translate_rus_to_eng(request_str)
+    logging.info(f"Request to AI: \n{request_in_eng}\n")   
+    answer_from_ai = ai_llama2.get_answer(request_in_eng)
     logging.info(f"Answer from AI: \n{answer_from_ai}\n")   
+    answer_from_ai = g_translate.translate_eng_to_rus(answer_from_ai)
     return answer_from_ai
 
 

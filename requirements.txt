@@ -16,3 +16,4 @@ youtube_transcript_api~=0.6.1
 g4f
 art
 ctransformers
+googletrans==3.1.0a0
