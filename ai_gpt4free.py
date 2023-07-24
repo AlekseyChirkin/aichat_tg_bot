@@ -1,6 +1,6 @@
 import g4f
 
-current_provider = g4f.Provider.Ails
+current_provider = g4f.Provider.Aichat
 
 # g4f USAGE:
 
@@ -26,7 +26,7 @@ current_provider = g4f.Provider.Ails
 #     print(message)
 
 
-def get_responce(input_msg: str) -> str:
+def get_answer(input_msg: str) -> str:
     return g4f.ChatCompletion.create(model=g4f.Model.gpt_35_turbo, provider=current_provider, messages=[{"role": "user", "content": input_msg}])
 
 if __name__ == "__main__":

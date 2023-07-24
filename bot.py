@@ -7,7 +7,7 @@ import stt
 from dotenv import load_dotenv
 import os
 from art import tprint
-import g4f_responce
+import ai_llama2
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_TOKEN")
@@ -18,12 +18,17 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(
     level=logging.INFO,
     filename="bot.log",
+    encoding='utf-8'
 )
 
 stt_obj = stt.STT()
 logging.info(f'Object {stt_obj=} created successfull!')
-tprint("Working...")
+tprint("ON AIR")
 
+async def handle_file(file: File, file_name: str, path: str):
+    Path(f"{path}").mkdir(parents=True, exist_ok=True)
+
+    await bot.download_file(file_path=file.file_path, destination=f"{path}/{file_name}")
 
 # Хэндлер на команду /start
 @dp.message_handler(commands=["start"])
@@ -46,17 +51,21 @@ async def voice_message_handler(message: Message):
     await handle_file(file=voice, file_name=voice_file_name, path=path_voices_tmp)
     logging.info(f"File {voice_file_name} saved to {path_to_voice} at {time.asctime()}")
     text_from_message = stt_obj.audio_to_text(path_to_voice)
-    logging.info(f"Распознанный текст запроса: \n{text_from_message}\n")
     # Получаем ответ нейросети
-    # response = g4f_responce.get_responce(text_from_message)
-    # await message.reply(response)
-    await message.reply(text_from_message)
+    await message.reply(ai_response(text_from_message))
 
 
 # На текст пользователя отвечает сразу нейросетью
 @dp.message_handler(content_types="text")
-async def echo_from_g4f(message: types.Message):
-    await message.answer(g4f_responce.get_responce(message.text))
+async def text_reply(message: types.Message):
+    await message.answer(ai_response(message.text))
+
+
+def ai_response(request_str: str):
+    logging.info(f"Request to AI: \n{request_str}\n")   
+    answer_from_ai = ai_llama2.get_answer(request_str)
+    logging.info(f"Answer from AI: \n{answer_from_ai}\n")   
+    return answer_from_ai
 
 
 ### Здесь должена быть обработка сообщения, если к нему приложено видео с ютуб ###
